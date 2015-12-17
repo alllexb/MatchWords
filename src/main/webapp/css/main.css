@@ -1,0 +1,52 @@
+body {
+    font: 100% Lucida Sans, Verdana;
+    margin: 20px;
+    line-height: 26px;
+}
+
+#top {
+    background-color: rgb(27, 114, 107);
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 6px;
+    margin: 4px;
+}
+
+#top h1, #top p {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    margin: auto;
+    margin-top: 20px;
+    width: 75%;
+    font: 80% Lucida Sans, Verdana;
+    background: rgb(96, 223, 251);
+    border: 2px solid rgb(27, 114, 107);
+    border-collapse: collapse;
+}
+td, th {
+    padding: 3px;
+    border-right: 1px solid rgb(10, 90, 85);
+    border-left: 1px solid rgb(10, 90, 85);
+}
+td {
+    text-align: center;
+    border-right: 1px solid rgb(10, 90, 85);
+    border-left: 1px solid rgb(10, 90, 85);
+    border-bottom: 2px rgb(10, 90, 85);
+}
+th {
+    text-align: center;
+    background: rgb(27, 160, 153);
+    color: rgb(16, 16, 62);
+}
+
+tr.even {
+    background: rgb(128, 255, 235);
+    /*border: 1px solid rgb(10, 90, 85);*/
+}
+.left {
+    text-align: left;
+}
