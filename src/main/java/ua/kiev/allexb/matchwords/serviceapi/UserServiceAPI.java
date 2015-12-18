@@ -1,4 +1,4 @@
-package ua.kiev.allexb.matchwords.service.impl;
+package ua.kiev.allexb.matchwords.serviceapi;
 
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,12 +16,12 @@ import java.util.List;
  * @version 1.0 14.12.2015
  */
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceAPI implements UserService{
 
     @Autowired
     private UserRepository userRepository;
 
-    public UserServiceImpl() {
+    public UserServiceAPI() {
     }
 
     @Transactional
