@@ -1,13 +1,12 @@
 package ua.kiev.allexb.matchwords.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import ua.kiev.allexb.matchwords.entity.User;
+import ua.kiev.allexb.matchwords.model.User;
 import ua.kiev.allexb.matchwords.service.UserService;
 
 import java.util.List;
@@ -24,7 +23,6 @@ public class UserController {
     }
 
     @Autowired
-    @Qualifier(value = "userService")
     private UserService userService;
 
     @RequestMapping(value = "/users_list", method = RequestMethod.GET)

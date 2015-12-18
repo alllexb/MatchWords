@@ -1,6 +1,6 @@
 package ua.kiev.allexb.matchwords.repository;
 
-import ua.kiev.allexb.matchwords.entity.models.Model;
+import ua.kiev.allexb.matchwords.entity.AbstractEntity;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import java.util.List;
  * @author allexb
  * @version 1.0 14.12.2015
  */
-public interface Repository<T extends Model> {
+public interface Repository<T extends AbstractEntity> {
 
     public List<T> getAll();
 

@@ -1,9 +1,7 @@
-package ua.kiev.allexb.matchwords.entity;
+package ua.kiev.allexb.matchwords.model;
 
-import ua.kiev.allexb.matchwords.entity.models.Model;
+import ua.kiev.allexb.matchwords.entity.UserEntity;
 
-import javax.persistence.*;
-import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -11,35 +9,38 @@ import java.util.Date;
  * @author allexb
  * @version 1.0 14.12.2015
  */
-@Entity
-@Table(name = "users_tb")
-public class User extends Model implements Serializable{
+public class User implements Serializable {
 
-    private static final long serialVersionUID = 5542049006721984411L;
+    private static final long serialVersionUID = 5857204436494167259L;
 
-    @NotNull
-    @Column(name = "name")
+    private Long id;
     private String name;
-
-    @Column(name = "last_name")
     private String lastName;
-
-    @NotNull
-    @Size(min = 5, max = 50)
-    @Column(name = "nick_name", length = 50)
     private String nickName;
-
-    @NotNull
-    @Column(name = "email_address")
     private String email;
-
-    @NotNull
-    @Column(name = "password", length = 50)
     private String password;
-
-    @NotNull
-    @Column(name = "registration_date")
     private Date registrationDate;
+
+    public User() {
+    }
+
+    public User(UserEntity userEntity) {
+        this.id = userEntity.getId();
+        this.name = userEntity.getName();
+        this.lastName = userEntity.getLastName();
+        this.nickName = userEntity.getNickName();
+        this.email = userEntity.getEmail();
+        this.password = userEntity.getPassword();
+        this.registrationDate = userEntity.getRegistrationDate();
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -88,4 +89,7 @@ public class User extends Model implements Serializable{
     public void setRegistrationDate(Date registrationDate) {
         this.registrationDate = registrationDate;
     }
+
 }
+
+

@@ -1,4 +1,4 @@
-package ua.kiev.allexb.matchwords.entity.models;
+package ua.kiev.allexb.matchwords.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -8,7 +8,7 @@ import java.io.Serializable;
  * @version 1.0 14.12.2015
  */
 @MappedSuperclass
-public class Model implements Serializable {
+public abstract class AbstractEntity implements Serializable {
 
     private static final long serialVersionUID = -3235671974350823999L;
 
@@ -17,10 +17,10 @@ public class Model implements Serializable {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    public Model() {
+    public AbstractEntity() {
     }
 
-    public Model(Long id) {
+    public AbstractEntity(Long id) {
         this.id = id;
     }
 

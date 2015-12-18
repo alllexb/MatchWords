@@ -1,6 +1,6 @@
 package ua.kiev.allexb.matchwords.repository.impl;
 
-import ua.kiev.allexb.matchwords.entity.models.Model;
+import ua.kiev.allexb.matchwords.entity.AbstractEntity;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -14,7 +14,7 @@ import java.util.List;
  * @author allexb
  * @version 1.0 14.12.2015
  */
-public abstract class HibernateAbstractRepository<T extends Model> {
+public abstract class HibernateAbstractRepository<T extends AbstractEntity> {
 
     @Autowired
     private SessionFactory sessionFactory;
