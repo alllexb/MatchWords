@@ -1,6 +1,6 @@
 package ua.kiev.allexb.matchwords.model;
 
-import ua.kiev.allexb.matchwords.entity.UserEntity;
+import ua.kiev.allexb.matchwords.repository.entity.UserEntity;
 
 import java.io.Serializable;
 import java.util.Date;

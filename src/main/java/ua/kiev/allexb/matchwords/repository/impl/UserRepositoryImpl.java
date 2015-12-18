@@ -1,6 +1,6 @@
 package ua.kiev.allexb.matchwords.repository.impl;
 
-import ua.kiev.allexb.matchwords.entity.UserEntity;
+import ua.kiev.allexb.matchwords.repository.entity.UserEntity;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
@@ -11,7 +11,7 @@ import ua.kiev.allexb.matchwords.repository.UserRepository;
  * @version 1.0 14.12.2015
  */
 @Repository
-public class UserRepositoryImpl extends HibernateAbstractRepository<UserEntity> implements UserRepository{
+public class UserRepositoryImpl extends HibernateAbstractRepository<UserEntity> implements UserRepository {
 
     public UserRepositoryImpl() {
     }

@@ -1,6 +1,6 @@
 package ua.kiev.allexb.matchwords.repository;
 
-import ua.kiev.allexb.matchwords.entity.AbstractEntity;
+import ua.kiev.allexb.matchwords.repository.entity.AbstractEntity;
 
 import java.util.List;
 

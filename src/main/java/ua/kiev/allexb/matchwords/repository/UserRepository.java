@@ -1,6 +1,6 @@
 package ua.kiev.allexb.matchwords.repository;
 
-import ua.kiev.allexb.matchwords.entity.UserEntity;
+import ua.kiev.allexb.matchwords.repository.entity.UserEntity;
 
 /**
  * @author allexb

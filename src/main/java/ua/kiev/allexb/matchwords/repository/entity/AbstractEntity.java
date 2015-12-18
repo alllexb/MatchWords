@@ -1,4 +1,4 @@
-package ua.kiev.allexb.matchwords.entity;
+package ua.kiev.allexb.matchwords.repository.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;

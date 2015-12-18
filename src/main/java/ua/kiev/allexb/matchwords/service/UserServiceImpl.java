@@ -1,12 +1,11 @@
-package ua.kiev.allexb.matchwords.serviceapi;
+package ua.kiev.allexb.matchwords.service;
 
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ua.kiev.allexb.matchwords.entity.UserEntity;
+import ua.kiev.allexb.matchwords.repository.entity.UserEntity;
 import ua.kiev.allexb.matchwords.model.User;
 import ua.kiev.allexb.matchwords.repository.UserRepository;
-import ua.kiev.allexb.matchwords.service.UserService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,12 +15,12 @@ import java.util.List;
  * @version 1.0 14.12.2015
  */
 @Service
-public class UserServiceAPI implements UserService{
+public class UserServiceImpl implements UserService{
 
     @Autowired
     private UserRepository userRepository;
 
-    public UserServiceAPI() {
+    public UserServiceImpl() {
     }
 
     @Transactional

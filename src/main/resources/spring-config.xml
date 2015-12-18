@@ -38,7 +38,7 @@
         </property>
         <property name="packagesToScan">
             <list>
-                <value>ua.kiev.allexb.matchwords.entity</value>
+                <value>ua.kiev.allexb.matchwords.repository.entity</value>
             </list>
         </property>
     </bean>
