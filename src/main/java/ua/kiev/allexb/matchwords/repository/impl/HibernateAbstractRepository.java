@@ -28,7 +28,7 @@ public abstract class HibernateAbstractRepository<T extends AbstractEntity> impl
     }
 
     public List<T> getAll() {
-        Criteria criteria = getSession().createCriteria((this.clazz));
+        Criteria criteria = getSession().createCriteria(this.clazz);
         criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
         return criteria.list();
     }

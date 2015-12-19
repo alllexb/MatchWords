@@ -23,6 +23,7 @@ public class UserServiceImpl implements UserService{
     public UserServiceImpl() {
     }
 
+    @Override
     @Transactional
     public List<User> getAll() {
         List<UserEntity> userEntities = userRepository.getAll();
