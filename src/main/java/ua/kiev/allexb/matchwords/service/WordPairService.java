@@ -13,6 +13,10 @@ public interface WordPairService {
 
     public List<WordPair> getAll();
 
+    public List<WordPair> getSized(int count);
+
     public List<WordPair> getAllByCategory(String category);
+
+    public List<WordPair> getSizedByCategory(int count, String category);
 
 }

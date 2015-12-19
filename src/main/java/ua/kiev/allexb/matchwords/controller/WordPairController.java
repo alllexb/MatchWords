@@ -8,6 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 import ua.kiev.allexb.matchwords.model.WordPair;
 import ua.kiev.allexb.matchwords.service.WordPairService;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -23,13 +24,19 @@ public class WordPairController {
     private WordPairService wordPairService;
 
     @RequestMapping(value = "/word_pairs", method = RequestMethod.GET)
-    public ModelAndView WordPairList() {
+    public ModelAndView WordPairList (HttpServletRequest request) {
         ModelAndView modelAndView = new ModelAndView();
+        if(request.getParameter("count") != null && !request.getParameter("count").equals("")) {
+            int count = Integer.valueOf(request.getParameter("count"));
+            List<WordPair> wordPairs = wordPairService.getSized(count);
+            modelAndView.addObject("word_pairs", wordPairs);
+            modelAndView.setViewName("word_pairs");
+        } else {
+            List<WordPair> wordPairs = wordPairService.getAll();
 
-        List<WordPair> wordPairs = wordPairService.getAll();
-
-        modelAndView.addObject("word_pairs", wordPairs);
-        modelAndView.setViewName("word_pairs");
+            modelAndView.addObject("word_pairs", wordPairs);
+            modelAndView.setViewName("word_pairs");
+        }
         return modelAndView;
     }
 

@@ -61,4 +61,9 @@ INSERT INTO word_pairs_tb VALUES (1, 'table', 'стол', 'room'),
 (14, 'pillow', 'подушка', 'room'),
 (15, 'bedsheet', 'простыня', 'room');
 
+INSERT INTO word_pairs_tb VALUES (16, 'violin', 'скрипка', 'music'),
+(17, 'guitar', 'гитара', 'music'),
+(18, 'flute', 'флейта', 'music');
+
+
 -- Dump completed on 2015-12-17 19:29:09
