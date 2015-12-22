@@ -30,12 +30,12 @@ public class WordPairController {
             int count = Integer.valueOf(request.getParameter("count"));
             List<WordPair> wordPairs = wordPairService.getSized(count);
             modelAndView.addObject("word_pairs", wordPairs);
-            modelAndView.setViewName("word_pairs");
+            modelAndView.setViewName("word-pairs");
         } else {
             List<WordPair> wordPairs = wordPairService.getAll();
 
             modelAndView.addObject("word_pairs", wordPairs);
-            modelAndView.setViewName("word_pairs");
+            modelAndView.setViewName("word-pairs");
         }
         return modelAndView;
     }

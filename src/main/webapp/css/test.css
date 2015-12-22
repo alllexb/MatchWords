@@ -1,0 +1,29 @@
+.word_table {
+    margin: auto;
+    /*margin-top: 20px;*/
+    width: 70%;
+    font: 20px Lucida Sans, Verdana;
+    background: rgb(96, 223, 251);
+    border: 2px solid rgb(27, 114, 107);
+    border-collapse: collapse;
+}
+.word_table td {
+    text-align: center;
+    padding: 6px;
+    border: 1px solid rgb(10, 90, 85);
+}
+.word_table th {
+    padding: 10px;
+    text-align: center;
+    background: rgb(27, 160, 153);
+    color: rgb(7, 7, 24);
+    border: 2px solid rgb(27, 114, 107);
+}
+
+.selected {
+    background: rgb(255, 228, 165);
+}
+
+.passed {
+    background: rgb(27, 114, 107);
+}

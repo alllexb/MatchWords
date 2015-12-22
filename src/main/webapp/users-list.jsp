@@ -13,7 +13,7 @@
     <p>Here is the list of all our friends.</p>
 </div>
 
-<table cellpadding="0">
+<table cellpadding="0" class="print_table">
     <thead>
     <tr>
         <th>Id</th>

@@ -32,7 +32,7 @@ public class UserController {
         List<User> users = userService.getAll();
 
         modelAndView.addObject("users_list", users);
-        modelAndView.setViewName("users_list");
+        modelAndView.setViewName("users-list");
 
         return modelAndView;
     }

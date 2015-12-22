@@ -30,7 +30,7 @@ public class TestController {
 //        modelAndView.addObject("pair_number", 10);
 //        modelAndView.addObject("category", "room");
 
-        modelAndView.setViewName("prepare_test");
+        modelAndView.setViewName("prepare-test");
         return modelAndView;
     }
 
@@ -43,7 +43,7 @@ public class TestController {
         List<WordPair> wordPairs = wordPairService.getSizedByCategory(count, category);
 
         modelAndView.addObject("word_pairs", wordPairs);
-        modelAndView.setViewName("word_pairs");
+        modelAndView.setViewName("test-performance");
 
         return modelAndView;
     }
