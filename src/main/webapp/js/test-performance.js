@@ -14,38 +14,34 @@ var controlList = [];
 prepareControlList(wordPairs);
 
 $(wordsTableName).click(function () {
-    if (event.which == 1) {
-        var $tr = $(this).closest('tr');
-        var row = $tr.index();
-        word = $(wordsTableName).slice(row, row + 1).text();
-        if (!passed(word)) {
-            if (!(typeof(wordsTableSelectedCell) == "undefined")) {
-                wordsTableSelectedCell.removeClass('selected');
-            }
-            wordsTableSelectedCell = $(wordsTableName).slice(row, row + 1);
-            wordsTableSelectedCell.addClass('selected');
-            wordsTableSelection = true;
-            control();
-            isTestComplete();
+    var $tr = $(this).closest('tr');
+    var row = $tr.index();
+    word = $(wordsTableName).slice(row, row + 1).text();
+    if (!passed(word)) {
+        if (!(typeof(wordsTableSelectedCell) == "undefined")) {
+            wordsTableSelectedCell.removeClass('selected');
         }
+        wordsTableSelectedCell = $(wordsTableName).slice(row, row + 1);
+        wordsTableSelectedCell.addClass('selected');
+        wordsTableSelection = true;
+        control();
+        isTestComplete();
     }
 });
 
 $(translationsTableName).click(function () {
-    if (event.which == 1) {
-        var $tr = $(this).closest('tr');
-        var row = $tr.index();
-        translation = $(translationsTableName).slice(row, row + 1).text();
-        if (!passed(translation)) {
-            if (!(typeof(translationsTableSelectedCell) == "undefined")) {
-                translationsTableSelectedCell.removeClass('selected');
-            }
-            translationsTableSelectedCell = $(translationsTableName).slice(row, row + 1);
-            translationsTableSelectedCell.addClass('selected');
-            translationsTableSelection = true;
-            control();
-            isTestComplete();
+    var $tr = $(this).closest('tr');
+    var row = $tr.index();
+    translation = $(translationsTableName).slice(row, row + 1).text();
+    if (!passed(translation)) {
+        if (!(typeof(translationsTableSelectedCell) == "undefined")) {
+            translationsTableSelectedCell.removeClass('selected');
         }
+        translationsTableSelectedCell = $(translationsTableName).slice(row, row + 1);
+        translationsTableSelectedCell.addClass('selected');
+        translationsTableSelection = true;
+        control();
+        isTestComplete();
     }
 });
 
