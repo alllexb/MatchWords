@@ -1,10 +1,7 @@
 package ua.kiev.allexb.matchwords.repository.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.io.Serializable;
 
 /**
  * @author allexb
@@ -13,7 +10,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "word_pairs_tb")
-public class WordPairEntity extends AbstractEntity implements Serializable{
+public class WordPairEntity extends AbstractEntity {
 
     private static final long serialVersionUID = 3647739362619225812L;
 
@@ -25,9 +22,9 @@ public class WordPairEntity extends AbstractEntity implements Serializable{
     @Column(name = "second_word")
     private String secondWord;
 
-    @NotNull
-    @Column(name = "category")
-    private String category;
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private WordPairsCategoryEntity wordPairsCategory;
 
     public String getFirstWord() {
         return firstWord;
@@ -45,11 +42,11 @@ public class WordPairEntity extends AbstractEntity implements Serializable{
         this.secondWord = secondWord;
     }
 
-    public String getCategory() {
-        return category;
+   public WordPairsCategoryEntity getWordPairsCategory() {
+        return wordPairsCategory;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setWordPairsCategory(WordPairsCategoryEntity wordPairsCategory) {
+        this.wordPairsCategory = wordPairsCategory;
     }
 }

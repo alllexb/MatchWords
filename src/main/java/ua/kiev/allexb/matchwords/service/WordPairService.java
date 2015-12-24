@@ -1,6 +1,7 @@
 package ua.kiev.allexb.matchwords.service;
 
 import ua.kiev.allexb.matchwords.model.WordPair;
+import ua.kiev.allexb.matchwords.model.WordPairsCategory;
 
 import java.util.List;
 
@@ -15,8 +16,8 @@ public interface WordPairService {
 
     public List<WordPair> getSized(int count);
 
-    public List<WordPair> getAllByCategory(String category);
+    public List<WordPair> getAllByCategory(WordPairsCategory category);
 
-    public List<WordPair> getSizedByCategory(int count, String category);
+    public List<WordPair> getSizedByCategory(int count, WordPairsCategory category);
 
 }

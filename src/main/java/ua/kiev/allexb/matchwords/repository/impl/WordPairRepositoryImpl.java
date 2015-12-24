@@ -5,6 +5,7 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import ua.kiev.allexb.matchwords.repository.WordPairRepository;
 import ua.kiev.allexb.matchwords.repository.entity.WordPairEntity;
+import ua.kiev.allexb.matchwords.repository.entity.WordPairsCategoryEntity;
 
 import java.util.List;
 
@@ -20,9 +21,9 @@ public class WordPairRepositoryImpl extends HibernateAbstractRepository<WordPair
     }
 
     @Override
-    public List<WordPairEntity> getAllByCategory(String category) {
+    public List<WordPairEntity> getAllByCategory(WordPairsCategoryEntity category) {
         Criteria criteria = getSession().createCriteria(WordPairEntity.class);
-        criteria.add(Restrictions.eq("category", category));
+        criteria.add(Restrictions.eq("wordPairsCategory", category));
         criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
         return criteria.list();
     }

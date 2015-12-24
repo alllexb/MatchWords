@@ -31,12 +31,13 @@ CREATE TABLE IF NOT EXISTS `word_pairs_tb` (
   `id` INT NOT NULL,
   `first_word` VARCHAR(50) NOT NULL,
   `second_word` VARCHAR(50) NOT NULL,
-  `category` VARCHAR(50) NULL,
-  PRIMARY KEY (`id`))
+  `category_id` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`category_id`) REFERENCES `word_pairs_category_tb`(`id`))
 ENGINE = InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for tables `users_tb`, `word_pairs_tb`
+-- Dumping data for tables `users_tb`
 --
 
 INSERT INTO users_tb VALUES (1,'Alexander','Bogomolnyy','allexb','allexb@list.ru','root','2015-12-17 16:48:00'),
@@ -45,25 +46,46 @@ INSERT INTO users_tb VALUES (1,'Alexander','Bogomolnyy','allexb','allexb@list.ru
 (4,'Jane','Smith','Mrs.Smith','mrs.smith@killyou.com','catchme','2015-12-17 17:58:28'),
 (5,'John','Smith','Mr.Smith','mr.smith@killyou.com','iamhere','2015-12-17 17:59:14');
 
-INSERT INTO word_pairs_tb VALUES (1, 'table', 'стол', 'room'),
-(2, 'chair', 'стул', 'room'),
-(3, 'bed', 'кровать', 'room'),
-(4, 'lamp', 'лампа', 'room'),
-(5, 'shelf', 'полка', 'room'),
-(6, 'cupboard', 'шкаф', 'room'),
-(7, 'carpet', 'ковер', 'room'),
-(8, 'wallpaper', 'обои', 'room'),
-(9, 'curtain', 'штора', 'room'),
-(10, 'window', 'окно', 'room'),
-(11, 'door', 'дверь', 'room'),
-(12, 'mirror', 'зеркало', 'room'),
-(13, 'blanket', 'одеяло', 'room'),
-(14, 'pillow', 'подушка', 'room'),
-(15, 'bedsheet', 'простыня', 'room');
+--
+-- Table structure for table `word_pairs_category_tb`
+--
 
-INSERT INTO word_pairs_tb VALUES (16, 'violin', 'скрипка', 'music'),
-(17, 'guitar', 'гитара', 'music'),
-(18, 'flute', 'флейта', 'music');
+CREATE TABLE word_pairs_category_tb (
+`id` INT NOT NULL,
+`title` VARCHAR(60) NOT NULL,
+`description` VARCHAR(1024),
+PRIMARY KEY (`id`))
+ENGINE = InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for tables `word_pairs_category_tb`
+--
 
--- Dump completed on 2015-12-17 19:29:09
+INSERT INTO `word_pairs_category_tb` VALUES (1, 'room', 'All about things in the room.'),
+(2, 'music', 'Music instruments and all about music things.');
+
+--
+-- Dumping data for tables `word_pairs_tb`
+--
+
+INSERT INTO word_pairs_tb VALUES (1, 'table', 'стол', 1),
+(2, 'chair', 'стул', 1),
+(3, 'bed', 'кровать', 1),
+(4, 'lamp', 'лампа', 1),
+(5, 'shelf', 'полка', 1),
+(6, 'cupboard', 'шкаф', 1),
+(7, 'carpet', 'ковер', 1),
+(8, 'wallpaper', 'обои', 1),
+(9, 'curtain', 'штора', 1),
+(10, 'window', 'окно', 1),
+(11, 'door', 'дверь', 1),
+(12, 'mirror', 'зеркало', 1),
+(13, 'blanket', 'одеяло', 1),
+(14, 'pillow', 'подушка', 1),
+(15, 'bedsheet', 'простыня', 1);
+
+INSERT INTO word_pairs_tb VALUES (16, 'violin', 'скрипка', 2),
+(17, 'guitar', 'гитара', 2),
+(18, 'flute', 'флейта', 2);
+
+-- Dump completed on 2015-12-24 19:10:39

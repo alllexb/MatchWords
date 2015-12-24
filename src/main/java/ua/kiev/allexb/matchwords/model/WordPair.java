@@ -16,7 +16,7 @@ public class WordPair implements Serializable{
     private Long id;
     private String firstWord;
     private String secondWord;
-    private String category;
+    private WordPairsCategory category;
 
     public WordPair() {
     }
@@ -25,7 +25,7 @@ public class WordPair implements Serializable{
         this.id = wordPairEntity.getId();
         this.firstWord = wordPairEntity.getFirstWord();
         this.secondWord = wordPairEntity.getSecondWord();
-        this.category = wordPairEntity.getCategory();
+        this.category = new WordPairsCategory(wordPairEntity.getWordPairsCategory());
     }
 
     public Long getId() {
@@ -52,11 +52,11 @@ public class WordPair implements Serializable{
         this.secondWord = secondWord;
     }
 
-    public String getCategory() {
+    public WordPairsCategory getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(WordPairsCategory category) {
         this.category = category;
     }
 }

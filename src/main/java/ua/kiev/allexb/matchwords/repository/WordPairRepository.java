@@ -1,6 +1,7 @@
 package ua.kiev.allexb.matchwords.repository;
 
 import ua.kiev.allexb.matchwords.repository.entity.WordPairEntity;
+import ua.kiev.allexb.matchwords.repository.entity.WordPairsCategoryEntity;
 
 import java.util.List;
 
@@ -10,6 +11,6 @@ import java.util.List;
  */
 public interface WordPairRepository extends Repository<WordPairEntity> {
 
-    public List<WordPairEntity> getAllByCategory(String category);
+    public List<WordPairEntity> getAllByCategory(WordPairsCategoryEntity category);
 
 }

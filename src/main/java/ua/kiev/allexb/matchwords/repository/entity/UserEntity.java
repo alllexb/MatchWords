@@ -11,7 +11,7 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "users_tb")
-public class UserEntity extends AbstractEntity implements Serializable{
+public class UserEntity extends AbstractEntity {
 
     private static final long serialVersionUID = 5542049006721984411L;
 
