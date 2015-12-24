@@ -34,7 +34,7 @@
         <td>${word_pair.id}</td>
         <td>${word_pair.firstWord}</td>
         <td>${word_pair.secondWord}</td>
-        <td>${word_pair.category}</td>
+        <td>${word_pair.category.title}</td>
         </tr>
         <% counter++; %>
     </c:forEach>
