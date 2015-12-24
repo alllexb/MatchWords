@@ -37,10 +37,10 @@ public class TestController {
     @RequestMapping(value = "/start", method = RequestMethod.POST)
     private ModelAndView startTest(HttpServletRequest request) {
         ModelAndView modelAndView = new ModelAndView();
-        int count = Integer.valueOf(request.getParameter("pairNumber"));
+        int number = Integer.valueOf(request.getParameter("pairNumber"));
         String category = request.getParameter("category").toLowerCase();
 
-        List<WordPair> wordPairs = wordPairService.getSizedByCategory(count, category);
+        List<WordPair> wordPairs = wordPairService.getSizedByCategory(number, category);
 
         modelAndView.addObject("word_pairs", wordPairs);
         modelAndView.setViewName("test-performance");
