@@ -29,7 +29,7 @@ public class WordPairServiceImpl implements WordPairService{
     private WordPairsCategoryRepository wordPairsCategoryRepository;
 
     @Override
-    @Transactional
+//    @Transactional
     public List<WordPair> getAll() {
         List<WordPairEntity> wordPairEntities = wordPairRepository.getAll();
         List<WordPair> wordPairs = new ArrayList<>();
@@ -40,7 +40,7 @@ public class WordPairServiceImpl implements WordPairService{
     }
 
     @Override
-    @Transactional
+//    @Transactional
     public List<WordPair> getSized(int number) {
         if (number < 0) {
             return this.getAll();
@@ -69,7 +69,7 @@ public class WordPairServiceImpl implements WordPairService{
     }
 
     @Override
-    @Transactional
+//    @Transactional
     public List<WordPair> getSizedByCategory(int number, WordPairsCategory category) {
         List<WordPair> wordPairs = getAllByCategory(category);
         if (wordPairs.size() < number) return wordPairs;

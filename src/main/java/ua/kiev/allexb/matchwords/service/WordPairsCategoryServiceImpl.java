@@ -22,7 +22,7 @@ public class WordPairsCategoryServiceImpl implements WordPairsCategoryService {
     private WordPairsCategoryRepository wordPairsCategoryRepository;
 
     @Override
-    @Transactional
+//    @Transactional
     public List<WordPairsCategory> getAll() {
         List<WordPairsCategoryEntity> wordPairsCategoryEntities = wordPairsCategoryRepository.getAll();
         List<WordPairsCategory> wordPairsCategories = new ArrayList<>();
@@ -33,7 +33,7 @@ public class WordPairsCategoryServiceImpl implements WordPairsCategoryService {
     }
 
     @Override
-    @Transactional
+//    @Transactional
     public WordPairsCategory getByTitle(String title) {
         WordPairsCategoryEntity wordPairsCategoryEntity = wordPairsCategoryRepository.getByTitle(title);
         return new WordPairsCategory(wordPairsCategoryEntity);
